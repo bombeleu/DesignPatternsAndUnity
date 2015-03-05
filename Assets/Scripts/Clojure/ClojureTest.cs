@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-public class ClojureTest : MonoBehaviour {
+public class ClojureTest : MonoBehaviour
+{
+    public static volatile Func<int> GetNewUid = GetNewUidClojure();
 
-    static Func<int> GetNewUidClojure()
+    private static Func<int> GetNewUidClojure()
     {
         var uid = 0;
         return () => uid++;
     }
-
-    public static volatile Func<int> GetNewUid = GetNewUidClojure();
 
     public void Update()
     {

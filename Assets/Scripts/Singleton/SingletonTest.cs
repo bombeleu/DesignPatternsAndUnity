@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class SingletonTest : MonoBehaviour {
-
+public class SingletonTest : MonoBehaviour
+{
+    public int SpawnAmount;
     public bool SpawnCompanionCube;
     public Transform SpawnPosition;
-    public int SpawnAmount;
 
     public void Update()
     {
@@ -13,7 +12,7 @@ public class SingletonTest : MonoBehaviour {
         {
             var prefab = SpawnCompanionCube ? Prefabs.Instance.CompanionCube : Prefabs.Instance.Cube;
 
-            for (int i = 0; i < SpawnAmount; ++i)
+            for (var i = 0; i < SpawnAmount; ++i)
             {
                 var go = prefab.Instantiate();
                 go.transform.SetParent(SpawnPosition);

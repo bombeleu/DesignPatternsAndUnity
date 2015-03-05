@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 
-public class AiController : MonoBehaviour {
+public class AiController : MonoBehaviour
+{
+    private IAiState _state;
 
-	private IAiState _state;
+    public AiController()
+    {
+        State = new AiStateIdle();
+    }
 
     public IAiState State
     {
@@ -12,10 +17,5 @@ public class AiController : MonoBehaviour {
             _state = value;
             _state.AiController = this;
         }
-    }
-
-    public AiController()
-    {
-        State = new AiStateIdle();
     }
 }

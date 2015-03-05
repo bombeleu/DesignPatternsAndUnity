@@ -1,5 +1,5 @@
-﻿public interface IAiState {
-
-    AiController AiController{ get; set; }
+﻿public interface IAiState
+{
+    AiController AiController { get; set; }
     void Update();
 }

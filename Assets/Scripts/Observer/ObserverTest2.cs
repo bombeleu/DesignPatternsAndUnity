@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
 
-public class ObserverTest2 : MonoBehaviour {
-
+public class ObserverTest2 : MonoBehaviour
+{
     public delegate void CustomAction(string message);
 
     public event CustomAction OnCustomAction;
 
-    void Awake()
+    private void Awake()
     {
         AddEventHandler(s => Debug.Log("Third event handler: " + s));
         AddEventHandler(s => Debug.Log("Fourth event handler: " + s));
     }
 
-    void AddEventHandler(CustomAction action)
+    private void AddEventHandler(CustomAction action)
     {
         OnCustomAction += action;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonUp(0))
         {
